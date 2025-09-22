@@ -1,189 +1,201 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rating Makanan Khas Indonesia</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rating Makanan Khas Indonesia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Rating Makanan Khas Indonesia</h1>
-        <p>Beri rating pada makanan tradisional Indonesia favoritmu!</p>
-        <hr>
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">Rating Makanan Khas Indonesia</h1>
+      <p class="header__tagline">Beri rating pada makanan tradisional Indonesia favoritmu!</p>
     </header>
 
-    <nav>
-        <h2>Daftar Isi</h2>
-        <ul>
-            <li><a href="#rawon">Rawon</a></li>
-            <li><a href="#pempek">Pempek</a></li>
-            <li><a href="#nasi-goreng-ayam">Nasi Goreng Ayam</a></li>
-            <li><a href="#gulai">Gulai</a></li>
-            <li><a href="#rendang">Rendang</a></li>
-            <li><a href="#form-rating">Beri Rating</a></li>
-        </ul>
-        <hr>
+    <nav class="nav">
+      <h2 class="nav__title">Daftar Isi</h2>
+      <ul class="nav__list">
+        <li><a href="#rawon" class="nav__link">🥘 Rawon</a></li>
+        <li><a href="#pempek" class="nav__link">🍤 Pempek</a></li>
+        <li><a href="#nasi-goreng" class="nav__link">🍛 Nasi Goreng Ayam</a></li>
+        <li><a href="#gulai" class="nav__link">🍲 Gulai</a></li>
+        <li><a href="#rendang" class="nav__link">🥩 Rendang</a></li>
+        <li><a href="#form-rating" class="nav__link">✍️ Beri Rating</a></li>
+      </ul>
     </nav>
 
     <main>
-        <section id="rawon">
-            <h2>Rawon</h2>
-            <img src="https://www.tasteatlas.com/images/dishes/aadf8e1a901242fb864992cf56531a6e.jpg?mw=1300" alt="Rawon" width="200">
-            <p><strong>Asal:</strong> Jawa Timur</p>
-            <p><strong>Deskripsi:</strong> Sup beraroma ini biasanya dibuat dengan daging sapi rebus lambat dan bahan-bahan tradisional Indonesia lainnya seperti daun jeruk, serai, jahe, dan cabai. Namun, elemen kuncinya adalah buah kluwek, kacang hitam Indonesia.</p>
-            <p><strong>Rating TasteAtlas:</strong> 4.62/5</p>
-            <p><strong>Peringkat Dunia:</strong> #8 (2025)</p>
-            <hr>
-        </section>
+      <section id="rawon" class="card">
+        <img src="https://www.tasteatlas.com/images/dishes/aadf8e1a901242fb864992cf56531a6e.jpg?mw=1300" alt="Rawon" class="card__img">
+        <div class="card__body">
+          <h2 class="card__title">Rawon</h2>
+          <p class="card__meta"><strong>Asal:</strong> Jawa Timur</p>
+          <p class="card__desc">Sup beraroma dengan daging sapi dan kluwek.</p>
+          <p class="card__rating">Rating: 4.62/5 | Peringkat Dunia: #8 (2025)</p>
+        </div>
+      </section>
 
-        <section id="pempek">
-            <h2>Pempek</h2>
-            <img src="https://www.tasteatlas.com/Images/Dishes/1d28edb5b603496e86c20e9855495b3d.jpg?mw=1300" alt="Pempek" width="200">
-            <p><strong>Asal:</strong> Palembang,Sumatra Selatan</p>
-            <p><strong>Deskripsi:</strong> Pempek adalah kue ikan tradisional yang dibuat dengan daging ikan giling dan tapioka. Kue bulat atau persegi panjang ini biasanya dikukus, dan tepat sebelum disajikan digoreng dengan minyak sayur dan dipotong-potong seukuran gigitan.</p>
-            <p><strong>Rating TasteAtlas:</strong> 4.54/5</p>
-            <p><strong>Peringkat Dunia:</strong> #23 (2025)</p>
-            <hr>
-        </section>
+      <section id="pempek" class="card">
+        <img src="https://www.tasteatlas.com/Images/Dishes/1d28edb5b603496e86c20e9855495b3d.jpg?mw=1300" alt="Pempek" class="card__img">
+        <div class="card__body">
+          <h2 class="card__title">Pempek</h2>
+          <p class="card__meta"><strong>Asal:</strong> Palembang, Sumatra Selatan</p>
+          <p class="card__desc">Kue ikan tradisional yang digoreng dan disajikan dengan cuko.</p>
+          <p class="card__rating">Rating: 4.54/5 | Peringkat Dunia: #23 (2025)</p>
+        </div>
+      </section>
 
-        <section id="nasi-goreng">
-            <h2>Nasi Goreng</h2>
-            <img src="https://www.tasteatlas.com/images/dishes/8267f641538448af93221623a7fc6d3d.jpg?mw=1300" alt="Nasi Goreng" width="200">
-            <p><strong>Asal:</strong> Seluruh Indonesia</p>
-            <p><strong>Deskripsi:</strong> Nasi goreng ini sebagian besar bahannya digoreng dengan nasi, dan hidangannya kemudian diberi telur goreng, bawang merah goreng, dan irisan cabai. Disarankan untuk menyajikan nasi goreng ayam dengan kerupuk udang di sampingnya.</p>
-            <p><strong>Rating TasteAtlas:</strong> 4.52/5</p>
-            <p><strong>Peringkat Dunia:</strong> #33 (2025)</p>
-            <hr>
-        </section>
+      <section id="nasi-goreng" class="card">
+        <img src="https://www.tasteatlas.com/images/dishes/8267f641538448af93221623a7fc6d3d.jpg?mw=1300" alt="Nasi Goreng" class="card__img">
+        <div class="card__body">
+          <h2 class="card__title">Nasi Goreng Ayam</h2>
+          <p class="card__meta"><strong>Asal:</strong> Seluruh Indonesia</p>
+          <p class="card__desc">Nasi goreng ayam dengan telur dan bumbu spesial.</p>
+          <p class="card__rating">Rating: 4.52/5 | Peringkat Dunia: #33 (2025)</p>
+        </div>
+      </section>
 
-        <section id="gulai">
-            <h2>Gulai</h2>
-            <img src="https://www.tasteatlas.com/Images/Dishes/f21c3cf6047f436ba8bf2a2589f8c39e.jpg?mw=1300" alt="Gulai" width="200">
-            <p><strong>Asal:</strong> Pulau Sumatra</p>
-            <p><strong>Deskripsi:</strong> Gulai adalah hidangan pedas Indonesia yang menyerupai rebusan atau sup kental. Karena penampilan dan rasanya, sering dijuluki sebagai kari Indonesia. Varietas daging apa pun bisa menjadi bahan utama gulai, serta jeroan, makanan laut, atau sayuran.</p>
-            <p><strong>Rating TasteAtlas:</strong> 4.51/5</p>
-            <p><strong>Peringkat Dunia:</strong> #44 (2025)</p>
-            <hr>
-        </section>
+      <section id="gulai" class="card">
+        <img src="https://www.tasteatlas.com/Images/Dishes/f21c3cf6047f436ba8bf2a2589f8c39e.jpg?mw=1300" alt="Gulai" class="card__img">
+        <div class="card__body">
+          <h2 class="card__title">Gulai</h2>
+          <p class="card__meta"><strong>Asal:</strong> Pulau Sumatra</p>
+          <p class="card__desc">Hidangan kental pedas seperti kari dengan berbagai bahan.</p>
+          <p class="card__rating">Rating: 4.51/5 | Peringkat Dunia: #44 (2025)</p>
+        </div>
+      </section>
 
-        <section id="rendang">
-            <h2>Soto</h2>
-            <img src="https://www.tasteatlas.com/Images/Dishes/6c6899bba0494ed38532126b79deb639.jpg?mw=1300" alt="Rendang" width="200">
-            <p><strong>Asal:</strong> Berbagai daerah dengan variasi berbeda</p>
-            <p><strong>Deskripsi:</strong> Rendang adalah hidangan daging Indonesia yang berasal dari masyarakat Minangkabau di Sumatera Barat. Hidangan ini terkenal dengan kepedasannya dan prosedur memasak yang panjang. Ini sering dibandingkan dengan kari India karena konsistensi dan rasanya yang unik.</p>
-            <p><strong>Rating TasteAtlas:</strong> 4.47/5</p>
-            <p><strong>Peringkat Dunia:</strong> #67 (2025)</p>
-            <hr>
-        </section>
+      <section id="rendang" class="card">
+        <img src="https://www.tasteatlas.com/Images/Dishes/6c6899bba0494ed38532126b79deb639.jpg?mw=1300" alt="Rendang" class="card__img">
+        <div class="card__body">
+          <h2 class="card__title">Rendang</h2>
+          <p class="card__meta"><strong>Asal:</strong> Sumatra Barat</p>
+          <p class="card__desc">Daging sapi dimasak dengan rempah khas Minang.</p>
+          <p class="card__rating">Rating: 4.47/5 | Peringkat Dunia: #67 (2025)</p>
+        </div>
+      </section>
 
-        <section id="form-rating">
-            <h2>Beri Rating pada Makanan</h2>
-            <form action="#" method="post">
-                <div>
-                    <label for="nama">Nama:</label>
-                    <input type="text" id="nama" name="nama" required>
-                </div>
-                <br>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <br>
-                <div>
-                    <label for="makanan">Pilih Makanan:</label>
-                    <select id="makanan" name="makanan" required>
-                        <option value="">--Pilih Makanan--</option>
-                        <option value="rawon">Rawon</option>
-                        <option value="pempek">Pempek</option>
-                        <option value="nasi-goreng-ayam">Nasi Goreng Ayam</option>
-                        <option value="gulai">Gulai</option>
-                        <option value="rendang">Rendang</option>
-                    </select>
-                </div>
-                <br>
-                <div>
-                    <label>Rating:</label>
-                    <input type="radio" id="bintang1" name="rating" value="1" required>
-                    <label for="bintang1">1</label>
-                    <input type="radio" id="bintang2" name="rating" value="2">
-                    <label for="bintang2">2</label>
-                    <input type="radio" id="bintang3" name="rating" value="3">
-                    <label for="bintang3">3</label>
-                    <input type="radio" id="bintang4" name="rating" value="4">
-                    <label for="bintang4">4</label>
-                    <input type="radio" id="bintang5" name="rating" value="5">
-                    <label for="bintang5">5</label>
-                </div>
-                <br>
-                <div>
-                    <label for="ulasan">Ulasan:</label><br>
-                    <textarea id="ulasan" name="ulasan" rows="4" cols="50" placeholder="Tulis ulasan Anda tentang makanan ini..."></textarea>
-                </div>
-                <br>
-                <div>
-                    <input type="submit" value="Kirim Rating">
-                    <input type="reset" value="Reset">
-                </div>
-            </form>
-            <hr>
-        </section>
+      <section id="form-rating" class="card">
+        <h2 class="card__title">Beri Rating pada Makanan</h2>
+        <form action="#" method="post" class="form">
+          <div class="form-group">
+            <label for="nama" class="form__label">Nama</label>
+            <input type="text" id="nama" name="nama" class="form__input" required>
+          </div>
 
-        <section>
-            <h2>Daftar Makanan Indonesia Terpopuler</h2>
-            <table border="1" cellpadding="8" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Makanan</th>
-                        <th>Asal Daerah</th>
-                        <th>Rating TasteAtlas</th>
-                        <th>Peringkat Dunia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Rawon</td>
-                        <td>Jawa Timur</td>
-                        <td>4.62/5</td>
-                        <td>#8 (2025)</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Pempek</td>
-                        <td>Palembang, Sumatra Selatan</td>
-                        <td>4.6/5</td>
-                        <td>#23 (2025)</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Nasi Goreng Ayam</td>
-                        <td>Seluruh Indonesia</td>
-                        <td>4.5/5</td>
-                        <td>#33 (2025)</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Gulai</td>
-                        <td>Pulau Sumatra</td>
-                        <td>4.51/5</td>
-                        <td>#44 (2025)</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Rendang</td>
-                        <td>Sumatra Barat</td>
-                        <td>4.47/5</td>
-                        <td>#67 (2025)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+          <div class="form-group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" name="email" class="form__input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="makanan" class="form__label">Pilih Makanan</label>
+            <select id="makanan" name="makanan" class="form__select" required>
+              <option value="">-- Pilih --</option>
+              <option value="rawon">Rawon</option>
+              <option value="pempek">Pempek</option>
+              <option value="nasi-goreng-ayam">Nasi Goreng Ayam</option>
+              <option value="gulai">Gulai</option>
+              <option value="rendang">Rendang</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <span class="form__label">Rating</span>
+            <div class="radio-group">
+              <input type="radio" id="bintang1" name="rating" value="1" class="radio-group__input" required>
+              <label for="bintang1" class="radio-group__label">1</label>
+
+              <input type="radio" id="bintang2" name="rating" value="2" class="radio-group__input">
+              <label for="bintang2" class="radio-group__label">2</label>
+
+              <input type="radio" id="bintang3" name="rating" value="3" class="radio-group__input">
+              <label for="bintang3" class="radio-group__label">3</label>
+
+              <input type="radio" id="bintang4" name="rating" value="4" class="radio-group__input">
+              <label for="bintang4" class="radio-group__label">4</label>
+
+              <input type="radio" id="bintang5" name="rating" value="5" class="radio-group__input">
+              <label for="bintang5" class="radio-group__label">5</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ulasan" class="form__label">Ulasan</label>
+            <textarea id="ulasan" name="ulasan" rows="4" class="form__textarea" placeholder="Tulis ulasan Anda..."></textarea>
+          </div>
+
+          <div class="form-group form-group--actions">
+            <button type="submit" class="btn btn-primary">Kirim Rating</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2 class="card__title">Daftar Makanan Indonesia Terpopuler</h2>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__header">No</th>
+                <th class="table__header">Nama Makanan</th>
+                <th class="table__header">Asal Daerah</th>
+                <th class="table__header">Rating</th>
+                <th class="table__header">Peringkat Dunia</th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__cell" data-label="No">1</td>
+                <td class="table__cell" data-label="Nama Makanan">Rawon</td>
+                <td class="table__cell" data-label="Asal Daerah">Jawa Timur</td>
+                <td class="table__cell" data-label="Rating">4.62/5</td>
+                <td class="table__cell" data-label="Peringkat Dunia">#8 (2025)</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell" data-label="No">2</td>
+                <td class="table__cell" data-label="Nama Makanan">Pempek</td>
+                <td class="table__cell" data-label="Asal Daerah">Palembang</td>
+                <td class="table__cell" data-label="Rating">4.54/5</td>
+                <td class="table__cell" data-label="Peringkat Dunia">#23 (2025)</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell" data-label="No">3</td>
+                <td class="table__cell" data-label="Nama Makanan">Nasi Goreng Ayam</td>
+                <td class="table__cell" data-label="Asal Daerah">Seluruh Indonesia</td>
+                <td class="table__cell" data-label="Rating">4.52/5</td>
+                <td class="table__cell" data-label="Peringkat Dunia">#33 (2025)</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell" data-label="No">4</td>
+                <td class="table__cell" data-label="Nama Makanan">Gulai</td>
+                <td class="table__cell" data-label="Asal Daerah">Sumatra</td>
+                <td class="table__cell" data-label="Rating">4.51/5</td>
+                <td class="table__cell" data-label="Peringkat Dunia">#44 (2025)</td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell" data-label="No">5</td>
+                <td class="table__cell" data-label="Nama Makanan">Rendang</td>
+                <td class="table__cell" data-label="Asal Daerah">Sumatra Barat</td>
+                <td class="table__cell" data-label="Rating">4.47/5</td>
+                <td class="table__cell" data-label="Peringkat Dunia">#67 (2025)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <hr>
-        <p>Referensi: <a href="https://www.tasteatlas.com/indonesia" target="_blank">TasteAtlas - Indonesian Food</a></p>
+    <footer class="footer">
+      <p>Referensi: <a href="https://www.tasteatlas.com/indonesia" target="_blank" class="footer__link">TasteAtlas - Indonesian Food</a></p>
     </footer>
+  </div>
 </body>
 </html>
