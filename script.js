@@ -1,4 +1,3 @@
-// Data Makanan
 const foods = [
     {
         id: 1, name: "Rawon", origin: "Jawa Timur",
@@ -32,10 +31,8 @@ const foods = [
     }
 ];
 
-// Inisialisasi data reviews dari localStorage
 let userReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
 
-// Fungsi untuk menggabungkan data awal dengan data review
 function initializeFoodData() {
     foods.forEach(food => {
         const reviewsForFood = userReviews.filter(review => review.foodId === food.id);
@@ -43,7 +40,6 @@ function initializeFoodData() {
     });
 }
 
-// Event listener utama saat DOM siap
 document.addEventListener('DOMContentLoaded', function() {
     initializeFoodData();
     renderFoodCards();
@@ -190,17 +186,17 @@ function handleUsernameSubmit(e) {
     }
 }
 
-// === FUNGSI-FUNGSI UTILITAS ===
+
 
 function loadInitialState() {
-    // Muat tema
+    // tema
     const theme = localStorage.getItem("theme");
     if (theme === "dark-mode") {
         document.body.classList.add("dark-mode");
         document.querySelector('.toggler-mode').innerText = "🌞";
     }
 
-    // Muat nama pengguna
+    // nama pengguna
     const username = localStorage.getItem("username");
     if (username) {
         updateUserDisplay(username);
