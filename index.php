@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rating Makanan Khas Indonesia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header__controls">
+                <button class="btn-hamburger" aria-label="Toggle Navigation">☰</button>
+                <div>
+                    <button class="toggler-mode" aria-label="Toggle Dark Mode">🌚</button>
+                    <span class="user-display">Guest</span>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <a href="logout.php" class="btn btn-secondary">Logout</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            
+            <h1 class="header__title">Rating Makanan Khas Indonesia</h1>
+            <p class="header__tagline">Beri rating pada makanan tradisional favoritmu!</p>
+            
+            <form class="user-form" id="user-form">
+                <input type="text" id="username-input" class="input" placeholder="Masukkan nama Anda..." required>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+        </header>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li><a href="#food-cards-container" class="nav__link">Daftar Makanan</a></li>
+                <li><a href="#form-rating" class="nav__link">✍️ Beri Rating</a></li>
+                <li><a href="#rating-table" class="nav__link">📊 Peringkat</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="food-cards-container">
+                </section>
+
+            <section id="form-rating" class="card-container">
+                <h2>Beri Ulasanmu!</h2>
+                <p>Bagikan pendapatmu tentang makanan khas Indonesia.</p>
+                <form class="form" id="rating-form">
+                    <div class="form-group">
+                        <label for="nama">Nama Anda</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Anda</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="makanan">Pilih Makanan</label>
+                        <select id="makanan" name="makanan" required>
+                            <option value="">-- Pilih salah satu --</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating Anda</label>
+                        <div class="radio-group">
+                            <input type="radio" id="rating1" name="rating" value="1" required><label for="rating1">1</label>
+                            <input type="radio" id="rating2" name="rating" value="2"><label for="rating2">2</label>
+                            <input type="radio" id="rating3" name="rating" value="3"><label for="rating3">3</label>
+                            <input type="radio" id="rating4" name="rating" value="4"><label for="rating4">4</label>
+                            <input type="radio" id="rating5" name="rating" value="5"><label for="rating5">5</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ulasan">Ulasan (Opsional)</label>
+                        <textarea id="ulasan" name="ulasan" rows="4"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Kirim Rating</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="rating-table" class="card-container">
+                <h2>Peringkat Makanan Berdasarkan Ulasan Pengguna</h2>
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead class="table__head">
+                            <tr>
+                                <th class="table__header">No</th>
+                                <th class="table__header">Nama Makanan</th>
+                                <th class="table__header">Asal Daerah</th>
+                                <th class="table__header">Rating Pengguna</th>
+                                <th class="table__header">Peringkat Dunia (TasteAtlas)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table__body">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Referensi: <a href="https://www.tasteatlas.com/indonesia" target="_blank" class="footer__link">TasteAtlas - Indonesian Food</a></p>
+            <p>&copy; 2025 - Situs Rating Makanan Indonesia</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
