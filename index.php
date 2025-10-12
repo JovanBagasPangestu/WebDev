@@ -1,3 +1,21 @@
+<?php
+session_start();
+require_once 'koneksi.php';
+
+$foods_for_js = $pdo->query("SELECT id, name FROM foods ORDER BY name ASC")->fetchAll();
+
+$initial_ratings_query = "
+    SELECT 
+        f.name, f.origin, f.world_rank,
+        COALESCE(AVG(r.rating), 0) AS average_user_rating, 
+        COUNT(r.id) AS total_reviews
+    FROM foods f
+    LEFT JOIN reviews r ON f.id = r.food_id
+    GROUP BY f.id
+    ORDER BY average_user_rating DESC, total_reviews DESC;
+";
+$initial_ratings = $pdo->query($initial_ratings_query)->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,8 +33,13 @@
                 <div>
                     <button class="toggler-mode" aria-label="Toggle Dark Mode">🌚</button>
                     <span class="user-display">Guest</span>
+
                     <?php if (isset($_SESSION['username'])): ?>
+                        
+                        <a href="admin_foods.php" class="btn btn-primary">Kelola Halaman</a>
+                        
                         <a href="logout.php" class="btn btn-secondary">Logout</a>
+
                     <?php endif; ?>
                 </div>
             </div>
@@ -40,7 +63,29 @@
 
         <main>
             <section id="food-cards-container">
-                </section>
+                <?php
+                $foods = $pdo->query("SELECT id, name, origin, description, tasteatlas_rating, world_rank, image FROM foods ORDER BY id DESC")->fetchAll();
+                ?>
+                <h2>Jelajahi Kekayaan Rasa Indonesia</h2>
+                <?php if (!$foods): ?>
+                    <p>Belum ada data makanan.</p>
+                <?php else: ?>
+                    <?php foreach ($foods as $food): ?>
+                        <article class="card fade-in" id="food-<?= $food['id'] ?>">
+                            <img src="<?= htmlspecialchars($food['image']) ?>" alt="<?= htmlspecialchars($food['name']) ?>">
+                            <div class="card__content">
+                                <h2><?= htmlspecialchars($food['name']) ?></h2>
+                                <p class="card__meta">Asal: <strong><?= htmlspecialchars($food['origin']) ?></strong></p>
+                                <p><?= nl2br(htmlspecialchars($food['description'])) ?></p>
+                                <p class="card__meta">Rating TasteAtlas: <?= htmlspecialchars($food['tasteatlas_rating']) ?>/5 | Peringkat Dunia: <?= htmlspecialchars($food['world_rank']) ?></p>
+                                <?php if (isset($_SESSION['username'])): ?>
+                                    <p><a href="admin_foods.php?edit=<?= $food['id'] ?>" class="btn btn-primary">Edit</a></p>
+                                <?php endif; ?>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </section>
 
             <section id="form-rating" class="card-container">
                 <h2>Beri Ulasanmu!</h2>
@@ -58,7 +103,7 @@
                         <label for="makanan">Pilih Makanan</label>
                         <select id="makanan" name="makanan" required>
                             <option value="">-- Pilih salah satu --</option>
-                            </select>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Rating Anda</label>
@@ -95,7 +140,22 @@
                             </tr>
                         </thead>
                         <tbody class="table__body">
-                            </tbody>
+                            <?php if (empty($initial_ratings)): ?>
+                                <tr><td colspan="5">Belum ada ulasan dari pengguna.</td></tr>
+                            <?php else: ?>
+                                <?php foreach ($initial_ratings as $index => $item): ?>
+                                    <tr class="table__row">
+                                        <td class="table__cell" data-label="No"><?= $index + 1 ?></td>
+                                        <td class="table__cell" data-label="Nama Makanan"><?= htmlspecialchars($item['name']) ?></td>
+                                        <td class="table__cell" data-label="Asal Daerah"><?= htmlspecialchars($item['origin']) ?></td>
+                                        <td class="table__cell" data-label="Rating">
+                                            <?= $item['total_reviews'] > 0 ? number_format($item['average_user_rating'], 2) . '/5 (' . $item['total_reviews'] . ' ulasan)' : 'Belum ada rating' ?>
+                                        </td>
+                                        <td class="table__cell" data-label="Peringkat Dunia"><?= htmlspecialchars($item['world_rank']) ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
                     </table>
                 </div>
             </section>
@@ -106,6 +166,10 @@
             <p>&copy; 2025 - Situs Rating Makanan Indonesia</p>
         </footer>
     </div>
+    
+    <script>
+        const foodsFromServer = <?= json_encode($foods_for_js) ?>;
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
